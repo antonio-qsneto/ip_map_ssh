@@ -1,78 +1,79 @@
-from tkinter import *
-from functools import partial
+"""Code graphic interface with TKinter"""
+
+from tkinter import Tk, Label, Button, Entry, Canvas
 from tkinter import filedialog
 import uteis
 
-janela = Tk()
+JANELA = Tk()
 
-janela.title("Ip Map SSH")
+JANELA.title("Ip Map SSH")
 
-header = Label(janela, text="Ip Map SSH", background="blue")
-header.place(x=200, y=40)
+HEADER = Label(JANELA, text="Ip Map SSH", background="blue")
+HEADER.place(x=200, y=40)
 
 #____________________________Buttons________________________#
 
-def UploadAction(event=None):
+def upload_action():
+    """Upload files"""
     filename = filedialog.askopenfilename()
     print('Selected:', filename)
 
 def bt_click():
-    uteis.lookip(ip_enter.get(), port_enter.get(), login_enter.get(), password_enter.get(), shell_enter.get())
-
+    """get info function"""
+    uteis.lookip(IP_ENTER.get(), LOGIN_ENTER.get(), PASSWORD_ENTER.get(), SHELL_ENTER.get())
 
 #______________________________ip___________________________#
-ip_label = Label(janela, text="IP:")
-ip_label.place(x=50, y=100)
-
-ip_enter = Entry(janela)
-ip_enter.place(x=90, y=100)
+IP_LABEL = Label(JANELA, text="IP:")
+IP_LABEL.place(x=50, y=100)
+IP_ENTER = Entry(JANELA)
+IP_ENTER.place(x=90, y=100)
 
 #_____________________________port___________________________#
-port_label = Label(janela, text="Port:")
-port_label.place(x=240, y=100)
+PORT_LABEL = Label(JANELA, text="Port:")
+PORT_LABEL.place(x=240, y=100)
 
-port_enter = Entry(janela)
-port_enter.place(x=300, y=100)
+PORT_ENTER = Entry(JANELA)
+PORT_ENTER.place(x=300, y=100)
 
 #_____________________________login___________________________#
-login_label = Label(janela, text="Login:")
-login_label.place(x=50, y=140)
+LOGIN_LABEL = Label(JANELA, text="Login:")
+LOGIN_LABEL.place(x=50, y=140)
 
-login_enter = Entry(janela)
-login_enter.place(x=90, y=140)
+LOGIN_ENTER = Entry(JANELA)
+LOGIN_ENTER.place(x=90, y=140)
 
 #_____________________________password________________________#
-password_label = Label(janela, text="Password:")
-password_label.place(x=240, y=140)
+PASSWORD_LABEL = Label(JANELA, text="Password:")
+PASSWORD_LABEL.place(x=240, y=140)
 
-password_enter = Entry(janela)
-password_enter.place(x=300, y=140)
+PASSWORD_ENTER = Entry(JANELA)
+PASSWORD_ENTER.place(x=300, y=140)
 
 #__________________________command_shell_______________________#
-line1 = Canvas(janela, width=400, height=1, background="grey")
-line1.place(x=35, y=180)
+LINE1 = Canvas(JANELA, width=400, height=1, background="grey")
+LINE1.place(x=35, y=180)
 
-shell_label = Label(janela, text="Command Shell:")
-shell_label.place(x=50, y=210)
+SHELL_LABEL = Label(JANELA, text="Command Shell:")
+SHELL_LABEL.place(x=50, y=210)
 
-shell_enter = Entry(janela)
-shell_enter.place(x=140, y=210, width=287)
+SHELL_ENTER = Entry(JANELA)
+SHELL_ENTER.place(x=140, y=210, width=287)
 
 #__________________________enterFile_______________________#
-line2 = Canvas(janela, width=400, height=1, background="grey")
-line2.place(x=35, y=250)
+LINE2 = Canvas(JANELA, width=400, height=1, background="grey")
+LINE2.place(x=35, y=250)
 
-lb6 = Label(janela, text="File Brutal force:")
-lb6.place(x=50, y=280)
+LB6 = Label(JANELA, text="File Brutal force:")
+LB6.place(x=50, y=280)
 
-button = Button(janela, text='File.txt', command=UploadAction).place(x=180, y=275)
+BUTTON = Button(JANELA, text='File.txt', command=upload_action).place(x=180, y=275)
 
-line3 = Canvas(janela, width=400, height=1, background="grey")
-line3.place(x=35, y=310)
+LINE3 = Canvas(JANELA, width=400, height=1, background="grey")
+LINE3.place(x=35, y=310)
 
-button2 = Button(janela, text='Submit!', command=bt_click).place(x=210, y=370)
+BUTTON2 = Button(JANELA, text='Submit!', command=bt_click).place(x=210, y=370)
 
 ###############################
 #Size window and position
-janela.geometry("480x450+300+300")
-janela.mainloop()
+JANELA.geometry("480x450+300+300")
+JANELA.mainloop()
