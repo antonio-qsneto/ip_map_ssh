@@ -10,20 +10,14 @@ janela.title("Ip Map SSH")
 header = Label(janela, text="Ip Map SSH", background="blue")
 header.place(x=200, y=40)
 
-##############Butons##############
+#____________________________Buttons________________________#
 
 def UploadAction(event=None):
     filename = filedialog.askopenfilename()
     print('Selected:', filename)
 
 def bt_click():
-    ip = ip_enter.get()
-    port = port_enter.get()
-    login = login_enter.get()
-    password = password_enter.get()
-    print(ip, port, login, password)
-
-
+    uteis.lookip(ip_enter.get(), port_enter.get(), login_enter.get(), password_enter.get(), shell_enter.get())
 
 
 #______________________________ip___________________________#
@@ -63,9 +57,8 @@ shell_label.place(x=50, y=210)
 
 shell_enter = Entry(janela)
 shell_enter.place(x=140, y=210, width=287)
-###########################################
 
-
+#__________________________enterFile_______________________#
 line2 = Canvas(janela, width=400, height=1, background="grey")
 line2.place(x=35, y=250)
 
