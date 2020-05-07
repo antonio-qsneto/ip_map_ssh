@@ -14,7 +14,7 @@ hosts = []
 for host in nm.all_hosts():
     hosts.append(host)
 
-msg = '''zenity --error --text '<span foreground="red" font="96">HACKEADO</span>\n\n<i>Hey, Aqui tudo eh possivel! ;)</i>' --display=:1'''
+msg = '''zenity --error --text '<span foreground="red" font="96">HACKEADO</span>\n\n<i>Hey, Get it! ;)</i>' --display=:1'''
 
 for devices in hosts:
     try:
@@ -23,5 +23,5 @@ for devices in hosts:
         ssh.exec_command(msg)
     except:
         continue
-msg_2 = '''zenity --error --text '<span foreground="green" font="96">CONECTADO</span>\n\n<i>Hey, Aqui tudo eh possivel! ;)</i>' '''
+msg_2 = '''zenity --error --text '<span foreground="green" font="96">CONECTADO</span>\n\n<i>Hey, Get it! ;)</i>' '''
 os.system(msg_2)
